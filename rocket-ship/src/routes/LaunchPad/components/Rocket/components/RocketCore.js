@@ -6,13 +6,12 @@ const MS_TO_TAKEOFF = SECONDS_TO_TAKEOFF * 1000;
 const FINAL_POSITION_BOTTOM_VAL = 'calc(400px)';
 
 function timeToPositionPercent(startTime) {
-  return FINAL_POSITION_BOTTOM_VAL;
-  // const now = Date.now();
-  // const timeDiff = now - startTime;
+  const now = Date.now();
+  const timeDiff = now - startTime;
 
-  // if (timeDiff >= MS_TO_TAKEOFF) { return FINAL_POSITION_BOTTOM_VAL; }
+  if (timeDiff >= MS_TO_TAKEOFF) { return FINAL_POSITION_BOTTOM_VAL; }
 
-  // return `calc(300px + ${((timeDiff / MS_TO_TAKEOFF) * 100).toFixed(0)}%)`;
+  return `calc(300px + ${((timeDiff / MS_TO_TAKEOFF) * 100).toFixed(0)}%)`;
 }
 
 function generateEmptyListEls(quantity) {
